@@ -9,6 +9,14 @@ pipeline {
                     reuseNode true
                 }
             }
+        }
+        stage("test"){
+            steps{
+                sh '''
+                  test -f build/index.html
+                '''
+            }
+
             steps{
                 sh '''
                  ls -la
